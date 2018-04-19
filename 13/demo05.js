@@ -23,3 +23,5 @@ var obj4 = {};
 for(var i=0;i<10;i++){
     obj4[i] = i;
 }
+console.log(obj3);
+console.log(obj4);
