@@ -9,10 +9,18 @@ arr1.forEach(function (a) {
 });
 console.log(arr1);//(3) [2, 5, 8]
 
+var arr1= [2,5,8];
+var arr2= [1,6,7];
+var arr3= [];
+arr1.forEach(function (a,i) {
+    arr3[i]=a>arr2[i]?a:arr2[i];
+},arr2);
+console.log(arr3);//(3) [2, 6, 8]
+
 // Array.prototype.every(callback,thisValue?) //返回一个布尔类型 若有不满足的将不再进行后续判断直接返回false
 var arr2= [2,5,8];//[2,4,6]
 var returnValue = arr2.every(function (a) {//判断数组元素是否都是偶数，若有不满足的将不再进行后续判断
-    //console.log(a);//打开此行，查看是否会输出8，为什么？
+    console.log(a);//打开此行，不会输出8
     return a%2===0;
 });
 console.log(returnValue);
@@ -21,7 +29,7 @@ console.log(returnValue);
 // Array.prototype.some(callback,thisValue?)//返回一个布尔类型 若有一部分满足的将不再进行后续判断，直接返回true
 var arr2= [2,5,8];//[2,4,6]
 var returnValue = arr2.some(function (a) {//判断数组元素是否都是偶数，若有不满足的将不再进行后续判断
-    //console.log(a);//打开此行，查看输出了哪些数，为什么？
+    console.log(a);//打开此行，只输出了2
     return a%2===0;
 });
 console.log(returnValue);
