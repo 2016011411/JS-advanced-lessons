@@ -80,8 +80,6 @@ var bar = 'abc';
 var foo = 'bar';
 var baz = { [foo]: 'abc'};//或var baz = { [foo]: bar};
 
-
-// Part3333333333333333333
 //Object.is它用来比较两个值是否严格相等，与严格比较运算符（===）的行为基本一致
 console.log(Object.is(1,"1"));//false
 console.log(Object.is(1,1));//true
@@ -114,10 +112,21 @@ obj2.a.b; // 2
 
 //Object.getPrototypeOf()、Object.setPrototypeOf()方法
 var obj = Object.create({x:1,y:2});
-console.log(Object.getPrototypeOf(obj));
+console.log(Object.getPrototypeOf(obj));//{x: 1, y: 2}
 Object.setPrototypeOf(obj,{z:3});
-console.log(Object.getPrototypeOf(obj));
+console.log(Object.getPrototypeOf(obj));//{z: 3}
 
+
+var obj1 = {a:1,b:2};
+var obj2 = {c:1,d:2};
+Object.setPrototypeOf(obj2,obj1);
+console.log(obj2.b,obj2.a);//2 1
+
+var obj1 = {a:1,b:2};
+var obj2 = Object.create(obj1);
+obj2.c = 3;
+obj2.d = 4;
+console.log(obj2.b,obj2.a);//2 1
 //回顾ES5 中的Object.keys静态方法
 //values 和 entries 方法
 var obj = { foo: "bar", baz: 42 };
