@@ -1,6 +1,3 @@
-/**
- * Created by qile on 2017/8/14.
- */
 // 4 提取JSON数据
 //解构赋值对提取JSON对象中的数据，尤其有用。
 var jsonData = {
@@ -9,9 +6,7 @@ var jsonData = {
     data: [867, 5309]
 };
 let { id, status, data: number } = jsonData;
-console.log(id, status, number);
-// 42, "OK", [867, 5309]
-//上面代码可以快速提取JSON数据的值。
+console.log(id, status, number);// 42, "OK", [867, 5309]。
 
 //5 函数参数的默认值
 jQuery.ajax = function (url, {
